@@ -1,0 +1,3394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sansbound – The Networking School | Lab Facilities</title>
+  <meta name="description"
+    content="Train on real Cisco hardware in Chennai. Explore Sansbound's hands-on networking lab featuring physical routers, switches, firewalls, and structured cabling." />
+
+  <style>
+    /* ==========================================
+       FONT & GLOBAL IMPORTS
+       ========================================== */
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+    /* ==========================================
+       DESIGN TOKENS & VARIABLE SYSTEM (LOGO COLORS)
+       ========================================== */
+    :root {
+      /* Colors - Light Theme (Derived from Navy #1B3A6B and Crimson Red #C0392B) */
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f1f5f9;
+      --bg-accent: #e2e8f0;
+
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+
+      /* Brand Logo Color Match */
+      --brand-red: #c0392b;
+      --brand-red-hover: #a93226;
+      --brand-red-light: rgba(192, 57, 43, 0.1);
+
+      --brand-blue: #1b3a6b;
+      --brand-blue-hover: #112544;
+      --brand-blue-light: rgba(27, 58, 107, 0.1);
+
+      --brand-cyan: #0284c7;
+      --brand-cyan-glow: rgba(2, 132, 199, 0.15);
+
+      --border-color: #e2e8f2;
+      --border-hover: #cbd5e1;
+      --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 8px -1px rgba(15, 23, 42, 0.03);
+      --glow-shadow: 0 0 20px rgba(27, 58, 107, 0.15);
+
+      --terminal-bg: #0f172a;
+      --terminal-text: #38bdf8;
+      --terminal-prompt: #34d399;
+
+      --transition-speed: 0.3s;
+    }
+
+    body.dark-theme {
+      /* Colors - Dark Theme (Glowing Tech Variant of Brand Colors) */
+      --bg-primary: #090e1a;
+      --bg-secondary: #0f172a;
+      --bg-tertiary: #1e293b;
+      --bg-accent: #334155;
+
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+
+      /* Brighter, highly readable glowing variants of logo colors for dark theme */
+      --brand-red: #ff4d5a;
+      --brand-red-hover: #ff707b;
+      --brand-red-light: rgba(255, 77, 90, 0.15);
+
+      --brand-blue: #3a86ff;
+      --brand-blue-hover: #5ea1ff;
+      --brand-blue-light: rgba(58, 134, 255, 0.15);
+
+      --brand-cyan: #00f5ff;
+      --brand-cyan-glow: rgba(0, 245, 255, 0.25);
+
+      --border-color: #1e293b;
+      --border-hover: #334155;
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --glow-shadow: 0 0 25px rgba(0, 245, 255, 0.35);
+
+      --terminal-bg: #050811;
+      --terminal-text: #00ff66;
+      --terminal-prompt: #00f5ff;
+    }
+
+    /* ==========================================
+       RESET & FOUNDATIONS
+       ========================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      transition: background-color var(--transition-speed), color var(--transition-speed);
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-primary);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-speed);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .sec-header {
+      text-align: center;
+      margin-bottom: 60px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sec-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--brand-red);
+      margin-bottom: 12px;
+      padding: 4px 12px;
+      background: var(--brand-red-light);
+      border-radius: 4px;
+    }
+
+    .sec-h2 {
+      font-size: 2.25rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .sec-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-primary {
+      background-color: var(--brand-blue-light);
+      color: var(--brand-blue);
+      border: 1px solid rgba(27, 58, 107, 0.3);
+    }
+
+    .badge-red {
+      background-color: var(--brand-red-light);
+      color: var(--brand-red);
+      border: 1px solid rgba(192, 57, 43, 0.3);
+    }
+
+    /* ==========================================
+       NAVIGATION BAR
+       ========================================== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      height: 80px;
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--brand-red-light);
+      border: 2px solid var(--brand-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-sub {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--brand-red);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 550;
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--brand-red);
+    }
+
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .theme-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .theme-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background-color: var(--bg-accent);
+      border-radius: 34px;
+      transition: var(--transition-speed);
+    }
+
+    .slider::before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: var(--transition-speed);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    input:checked+.slider {
+      background-color: var(--brand-blue);
+    }
+
+    input:checked+.slider::before {
+      transform: translateX(24px);
+    }
+
+    .theme-icon {
+      font-size: 1.1rem;
+    }
+
+    .btn-cta {
+      background-color: var(--brand-red);
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(192, 57, 43, 0.25);
+      transition: transform 0.2s, background-color var(--transition-speed);
+    }
+
+    .btn-cta:hover {
+      background-color: var(--brand-red-hover);
+      transform: translateY(-1px);
+    }
+
+    .burger-menu {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .burger-menu span {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-primary);
+      border-radius: 3px;
+      transition: var(--transition-speed);
+    }
+
+    /* ==========================================
+       HERO SECTION
+       ========================================== */
+    .hero {
+      background-color: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      padding: 120px 0 80px 0;
+      overflow: hidden;
+      transition: background-color var(--transition-speed);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand-blue-light);
+      border: 1px solid rgba(27, 58, 107, 0.25);
+      color: var(--text-primary);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+
+    body.dark-theme .hero-pill {
+      color: var(--brand-blue-hover);
+    }
+
+    .hero-pill .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--brand-red);
+      box-shadow: 0 0 8px var(--brand-red);
+      animation: pulse-ring 1.5s infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.95);
+        opacity: 0.5;
+      }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      color: var(--brand-red);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn-primary {
+      background-color: var(--brand-red);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(192, 57, 43, 0.3);
+      transition: transform 0.2s, background-color var(--transition-speed);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--brand-red-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 12px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: border-color 0.2s, background-color var(--transition-speed);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text-primary);
+      background-color: var(--bg-tertiary);
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+    }
+
+    .hero-image-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-secondary);
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-glass-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    body.dark-theme .hero-glass-badge {
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .badge-icon {
+      font-size: 1.75rem;
+    }
+
+    .badge-text div:first-child {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--brand-red);
+      letter-spacing: 0.5px;
+    }
+
+    .badge-text div:last-child {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    /* ==========================================
+       STATS STRIP
+       ========================================== */
+    .stats-strip {
+      background-color: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      padding: 40px 0;
+      position: relative;
+      z-index: 10;
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat-item {
+      border-right: 1px solid var(--border-color);
+      padding: 0 10px;
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-num span {
+      color: var(--brand-red);
+    }
+
+    .stat-lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    /* ==========================================
+       LAB OVERVIEW & FEATURE LIST
+       ========================================== */
+    #lab-overview {
+      background-color: var(--bg-tertiary);
+      transition: background-color var(--transition-speed);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .overview-visual {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+    }
+
+    .overview-visual img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .feat-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .feat-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+      transition: border-color 0.2s, background-color var(--transition-speed);
+    }
+
+    .feat-item:hover .feat-icon-box {
+      border-color: var(--brand-red);
+    }
+
+    .feat-content h3 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .feat-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================
+       INTERACTIVE SERVER RACK EXPLORER
+       ========================================== */
+    #rack-explorer {
+      background-color: var(--bg-secondary);
+      transition: background-color var(--transition-speed);
+    }
+
+    .rack-explorer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .rack-visual-frame {
+      background-color: #0b0f19;
+      border: 8px solid #1e293b;
+      border-radius: 12px;
+      padding: 30px 20px;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .rack-unit {
+      position: relative;
+      background-color: #151d30;
+      border: 1px solid #2e3b55;
+      border-radius: 6px;
+      height: 70px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+    }
+
+    .rack-unit:hover {
+      border-color: var(--brand-blue);
+      background-color: #1b263e;
+    }
+
+    body.dark-theme .rack-unit:hover {
+      border-color: var(--brand-cyan);
+    }
+
+    .rack-unit.active {
+      border-color: var(--brand-blue);
+      background-color: #1a2a47;
+      box-shadow: 0 0 15px rgba(27, 58, 107, 0.4), inset 0 0 8px rgba(27, 58, 107, 0.15);
+    }
+
+    body.dark-theme .rack-unit.active {
+      border-color: var(--brand-cyan);
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.2), inset 0 0 8px rgba(0, 245, 255, 0.1);
+    }
+
+    .rack-ear {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 14px;
+      background-color: #334155;
+      border-left: 2px solid #475569;
+      border-right: 2px solid #1e293b;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .rack-ear.left {
+      left: 0;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .rack-ear.right {
+      right: 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .rack-bolt {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #0f172a;
+      box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.2);
+    }
+
+    .rack-plate {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .rack-plate .device-name {
+      color: #94a3b8;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .rack-unit.active .rack-plate .device-name {
+      color: #fff;
+    }
+
+    .rack-leds {
+      display: flex;
+      gap: 6px;
+    }
+
+    .led {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #475569;
+    }
+
+    .rack-unit.active .led {
+      background-color: #10b981;
+      box-shadow: 0 0 6px #10b981;
+    }
+
+    .led-blink {
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0.4;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.4;
+      }
+    }
+
+    .rack-ports {
+      display: flex;
+      gap: 4px;
+    }
+
+    .mini-port {
+      width: 10px;
+      height: 10px;
+      background-color: #0b0f19;
+      border: 1px solid #334155;
+      border-radius: 2px;
+    }
+
+    .rack-detail-card {
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: var(--card-shadow);
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    #rack-details-content {
+      min-height: 280px;
+    }
+
+    .details-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .details-header h4 {
+      font-size: 1.4rem;
+    }
+
+    .details-role {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .details-section {
+      margin-bottom: 20px;
+    }
+
+    .details-section h5 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--brand-red);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .details-section p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .details-section.syllabus ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    .details-section.syllabus li {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    /* ==========================================
+       INTERACTIVE CABLING LAB
+       ========================================== */
+    #cabling-lab {
+      background-color: var(--bg-tertiary);
+      transition: background-color var(--transition-speed);
+    }
+
+    .cabling-wrapper {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .cable-toolbox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 35px;
+    }
+
+    .toolbox-title {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .cable-options {
+      display: flex;
+      gap: 12px;
+    }
+
+    .cable-btn {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: var(--transition-speed);
+    }
+
+    .cable-btn:hover {
+      background-color: var(--bg-accent);
+    }
+
+    .cable-btn.active {
+      border-color: var(--brand-red);
+      background-color: var(--brand-red-light);
+      box-shadow: 0 0 10px rgba(192, 57, 43, 0.1);
+    }
+
+    .cable-color-indicator {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+
+    .indicator-console {
+      background-color: #38bdf8;
+      border: 1px solid #0284c7;
+    }
+
+    .indicator-straight {
+      background-color: #0f172a;
+      border: 1px solid #475569;
+    }
+
+    .indicator-crossover {
+      background-color: #f59e0b;
+      border: 1px dashed #b45309;
+    }
+
+    .cabling-sandbox {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 80px;
+      padding: 40px 0;
+      min-height: 250px;
+    }
+
+    .cable-svg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .cable-line {
+      stroke-width: 4px;
+      fill: none;
+      stroke-linecap: round;
+      opacity: 0.85;
+    }
+
+    .cable-line.console {
+      stroke: #38bdf8;
+    }
+
+    .cable-line.straight {
+      stroke: #475569;
+    }
+
+    .cable-line.crossover {
+      stroke: #f59e0b;
+      stroke-dasharray: 6, 6;
+    }
+
+    .cabling-device {
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px 16px;
+      text-align: center;
+      position: relative;
+      z-index: 20;
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .cabling-device h4 {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .device-ports-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .port-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .port-item span {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .port {
+      width: 28px;
+      height: 20px;
+      background-color: #0f172a;
+      border: 2px solid #334155;
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition-speed);
+    }
+
+    .port:hover {
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 8px var(--brand-blue);
+    }
+
+    body.dark-theme .port:hover {
+      border-color: var(--brand-cyan);
+      box-shadow: 0 0 8px var(--brand-cyan);
+    }
+
+    .port.selected {
+      border-color: var(--brand-red);
+      box-shadow: 0 0 10px var(--brand-red);
+    }
+
+    .port.connected {
+      border-color: #10b981;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+    }
+
+    .port.connected::after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #10b981;
+      box-shadow: 0 0 4px #10b981;
+    }
+
+    .cabling-status-box {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .status-msg {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .status-msg.info {
+      color: var(--text-muted);
+    }
+
+    .status-msg.error {
+      color: var(--brand-red);
+    }
+
+    .status-msg.success {
+      color: #10b981;
+    }
+
+    .status-msg.success.highlight {
+      animation: pulse-border 1.5s infinite alternate;
+    }
+
+    @keyframes pulse-border {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.01);
+      }
+    }
+
+    .btn-reset {
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-speed);
+    }
+
+    .btn-reset:hover {
+      background-color: var(--bg-accent);
+    }
+
+    /* ==========================================
+       INTERACTIVE CISCO CLI TERMINAL
+       ========================================== */
+    #cli-sandbox {
+      background-color: var(--bg-secondary);
+      transition: background-color var(--transition-speed);
+    }
+
+    .terminal-frame {
+      background-color: var(--terminal-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+    }
+
+    .terminal-header {
+      background-color: var(--bg-accent);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .terminal-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .t-btn {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .t-btn.red {
+      background-color: #ef4444;
+    }
+
+    .t-btn.yellow {
+      background-color: #f59e0b;
+    }
+
+    .t-btn.green {
+      background-color: #10b981;
+    }
+
+    .terminal-title {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .btn-demo-trigger {
+      background-color: var(--brand-red);
+      color: #fff;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.7rem;
+      cursor: pointer;
+      transition: background-color var(--transition-speed);
+    }
+
+    .btn-demo-trigger:hover {
+      background-color: var(--brand-red-hover);
+    }
+
+    .btn-demo-trigger:disabled {
+      background-color: var(--text-muted);
+      cursor: not-allowed;
+    }
+
+    .terminal-content {
+      height: 380px;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cli-output-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cli-line {
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .cli-line.command {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    body.dark-theme .cli-line.command {
+      color: #fff;
+    }
+
+    .cli-line.output {
+      color: var(--terminal-text);
+    }
+
+    .cli-input-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .cli-prompt {
+      color: var(--terminal-prompt);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .cli-input-wrapper {
+      flex-grow: 1;
+      position: relative;
+    }
+
+    .cli-input-wrapper input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+    }
+
+    body.dark-theme .cli-input-wrapper input {
+      color: #fff;
+    }
+
+    /* ==========================================
+       EQUIPMENT CARDS
+       ========================================== */
+    #equipment {
+      background-color: var(--bg-tertiary);
+      transition: background-color var(--transition-speed);
+    }
+
+    .equip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .equip-card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px 24px;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s, background-color var(--transition-speed);
+    }
+
+    .equip-card:hover {
+      border-color: var(--brand-red);
+      transform: translateY(-4px);
+    }
+
+    .equip-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .equip-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .equip-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      min-height: 54px;
+    }
+
+    .equip-count {
+      display: inline-block;
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* ==========================================
+       LAB GALLERY
+       ========================================== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-auto-rows: 260px;
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+    }
+
+    .gallery-item.tall {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+          rgba(0, 0, 0, .85),
+          rgba(0, 0, 0, .2),
+          transparent);
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      opacity: 1;
+    }
+
+    .gallery-overlay span {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    @media(max-width:768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item,
+      .gallery-item.tall {
+        height: 260px;
+        grid-row: auto;
+      }
+    }
+
+    /* ==========================================
+       STUDENT REVIEWS
+       ========================================== */
+    #reviews {
+      background-color: var(--bg-tertiary);
+      transition: background-color var(--transition-speed);
+    }
+
+    .reviews-top {
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-hover));
+      border-radius: 20px;
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      color: #fff;
+      margin-bottom: 40px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .rv-score-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    .rv-score-big {
+      font-size: 4.5rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .rv-stars-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stars {
+      font-size: 1.5rem;
+      color: #fbbf24;
+    }
+
+    .rv-count {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    .rv-divider {
+      width: 1px;
+      height: 80px;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .rv-hero-quote {
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .rv-card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: var(--card-shadow);
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .rv-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .avatar.navy {
+      background: linear-gradient(135deg, var(--brand-blue), #112544);
+    }
+
+    .avatar.red {
+      background: linear-gradient(135deg, var(--brand-red), #a93226);
+    }
+
+    .rv-meta h4 {
+      font-size: 0.95rem;
+    }
+
+    .rv-meta .stars {
+      font-size: 0.9rem;
+    }
+
+    .rv-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .rv-date {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+
+    /* ==========================================
+       CONTACT & BOOKING TOUR
+       ========================================== */
+    #contact {
+      background-color: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info-panel h3 {
+      font-size: 1.75rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-desc {
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .c-link-item {
+      display: flex;
+      gap: 16px;
+    }
+
+    .c-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .c-content label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .c-content p,
+    .c-content a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .c-content a:hover {
+      color: var(--brand-red);
+    }
+
+    .booking-form-card {
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .booking-form-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 12px 16px;
+      border-radius: 8px;
+      outline: none;
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: border-color var(--transition-speed);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--brand-blue);
+    }
+
+    body.dark-theme .form-group input:focus,
+    body.dark-theme .form-group select:focus,
+    body.dark-theme .form-group textarea:focus {
+      border-color: var(--brand-cyan);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: var(--brand-red);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(192, 57, 43, 0.2);
+      transition: transform 0.2s, background-color var(--transition-speed);
+    }
+
+    .btn-submit:hover {
+      background-color: var(--brand-red-hover);
+      transform: translateY(-1px);
+    }
+
+    .ticket-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(9, 14, 26, 0.75);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 20px;
+    }
+
+    .ticket-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .ticket-card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      position: relative;
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .ticket-card-header {
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-hover));
+      padding: 24px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ticket-card-header h3 {
+      color: #fff;
+      font-size: 1.25rem;
+    }
+
+    .ticket-body {
+      padding: 30px;
+    }
+
+    .ticket-id-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px dashed var(--border-color);
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+
+    .t-id-lbl {
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    #t-id {
+      font-family: 'Fira Code', monospace;
+      font-weight: 700;
+      color: var(--brand-red);
+    }
+
+    .ticket-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .t-info-item label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .t-info-item span {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+
+    .barcode-wrapper {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #t-barcode {
+      display: inline-flex;
+      justify-content: center;
+    }
+
+    .ticket-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    footer {
+      background-color: var(--bg-tertiary);
+      border-top: 1px solid var(--border-color);
+      padding: 60px 0 30px 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 30px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-copyright {
+      text-align: center;
+    }
+
+    /* ==========================================
+       RESPONSIVE DESIGN BREAKPOINTS
+       ========================================== */
+    @media (max-width: 1024px) {
+      h1 {
+        font-size: 2.75rem;
+      }
+
+      .hero-grid,
+      .overview-grid,
+      .rack-explorer-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .cabling-sandbox {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .cable-svg-overlay {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 70px 0;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 16px;
+      }
+
+      .stat-item:nth-child(4),
+      .stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .reviews-top {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
+
+      .rv-divider {
+        display: none;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      .gallery-item.tall {
+        grid-row: span 1;
+      }
+
+      .burger-menu {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--bg-secondary);
+        flex-direction: column;
+        padding: 40px 24px;
+        gap: 24px;
+        align-items: flex-start;
+        transition: left 0.4s ease;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+
+      .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -7px);
+      }
+
+      .form-group-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="dark-theme">
+
+  <!-- ─── NAV ─── -->
+  <nav id="nav-header">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <div class="logo-circle">
+          <img src="https://www.sansboundnetworking.com/logo.png" />
+        </div>
+        <div>
+          <div class="brand-text">SANSBOUND</div>
+          <div class="brand-sub">The Networking School</div>
+        </div>
+      </a>
+
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#lab-overview">The Lab</a></li>
+          <li><a href="#rack-explorer">Rack Explorer</a></li>
+          <li><a href="#cabling-lab">Wiring Practice</a></li>
+          <li><a href="#cli-sandbox">CLI Sandbox</a></li>
+          <li><a href="#equipment">Equipment</a></li>
+          <li><a href="#reviews">Testimonials</a></li>
+          <li><a href="#contact" class="btn-cta">Book a Tour</a></li>
+        </ul>
+
+        <!-- Light/Dark Switch -->
+        <div class="theme-switch-wrapper">
+          <span class="theme-icon">🌙</span>
+          <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider"></span>
+          </label>
+          <span class="theme-icon">☀️</span>
+        </div>
+
+        <div class="burger-menu" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content-left">
+          <div class="hero-pill">
+            <span class="pulse-dot"></span> Chennai · West Mambalam
+          </div>
+          <h1>Real Labs.<br><span>Real Hardware.</span><br>Real Skills.</h1>
+          <p class="hero-sub">Train on the same physical Cisco routers, switches, and firewalls used in enterprise
+            production networks worldwide. No simulators for core modules—we believe in physical muscle memory.</p>
+          <div class="hero-actions">
+            <a href="#cabling-lab" class="btn-primary">Connect Cables Now</a>
+            <a href="#cli-sandbox" class="btn-outline">Test Cisco CLI</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <div class="hero-image-card">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+              alt="Networking Lab" />
+            <div class="hero-glass-badge">
+              <span class="badge-icon">⚡</span>
+              <div class="badge-text">
+                <div>Physical Access</div>
+                <div>24/7 Sandbox Access</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STATS STRIP ─── -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num" data-target="20" data-decimal="false">0</div>
+          <div class="stat-lbl">Cisco Routers &amp; Switches</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="6" data-decimal="false">0</div>
+          <div class="stat-lbl">Dedicated Lab Stations</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="960" data-decimal="false">0</div>
+          <div class="stat-lbl">Students Trained</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="4.6" data-decimal="true">0</div>
+          <div class="stat-lbl">Google Star Rating</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="100" data-decimal="false">0</div>
+          <div class="stat-lbl">Hands-on Practice</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── LAB OVERVIEW ─── -->
+  <section id="lab-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-visual">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+            alt="Network Lab" />
+        </div>
+        <div>
+          <span class="sec-eyebrow">About the Lab</span>
+          <h2 class="sec-h2">A Lab Built for Serious Network Learning</h2>
+          <p class="sec-sub" style="margin-bottom: 40px;">Packet Tracer is good for exams, but real networks run on
+            hardware. Learn cable dressing, card installations, status monitoring, and recovery procedures that prepare
+            you directly for production setups.</p>
+
+          <div class="features-list">
+            <div class="feat-item">
+              <div class="feat-icon-box">🖥️</div>
+              <div class="feat-content">
+                <h3>Physical Cisco Hardware</h3>
+                <p>Configure and command real Cisco 2900 series ISR routers and modular Catalyst switches, replicating
+                  enterprise topologies.</p>
+              </div>
+            </div>
+            <div class="feat-item">
+              <div class="feat-icon-box">🔌</div>
+              <div class="feat-content">
+                <h3>Structured Cabling</h3>
+                <p>Punch down copper cables on patch panels, configure fiber runs, crimp RJ45 connectors, and build rack
+                  trunks from scratch.</p>
+              </div>
+            </div>
+            <div class="feat-item">
+              <div class="feat-icon-box">🛡️</div>
+              <div class="feat-content">
+                <h3>Firewall Security Zone Configurations</h3>
+                <p>Deploy security rules, site-to-site IPsec VPNs, access control lists, and NAT mechanisms on ASA
+                  appliances.</p>
+              </div>
+            </div>
+            <div class="feat-item">
+              <div class="feat-icon-box">📡</div>
+              <div class="feat-content">
+                <h3>Wireless Enterprise Setup</h3>
+                <p>Map and design SSIDs, security policies, wireless controller mappings, and VLAN boundaries in dynamic
+                  topologies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVER RACK EXPLORER ─── -->
+  <section id="rack-explorer">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-eyebrow">Visual Tour</span>
+        <h2 class="sec-h2">Interactive Server Rack</h2>
+        <p class="sec-sub">Click on any device in the rack to explore its technical specifications and what you'll
+          configure on it in class.</p>
+      </div>
+
+      <div class="rack-explorer-grid">
+        <!-- Interactive Visual Rack -->
+        <div class="rack-visual-frame">
+          <!-- Patch Panel -->
+          <div class="rack-unit" data-unit="patch">
+            <div class="rack-ear left">
+              <div class="rack-bolt"></div>
+              <div class="rack-bolt"></div>
+            </div>
+            <div class="rack-plate">
+              <span class="device-name">UNIT 01: CAT6 PATCH PANEL</span>
+              <div class="rack-ports">
+                <span class="mini-port"></span><span class="mini-port"></span><span class="mini-port"></span><span
+                  class="mini-port"></span>
+                <span class="mini-port"></span><span class="mini-port"></span><span class="mini-port"></span><span
+                  class="mini-port"></span>
+              </div>
+            </div>
+            <div class="rack-ear right">
+              <div class="rack-bolt"></div>
+              <div class="rack-bolt"></div>
+            </div>
+          </div>
+
+          <!-- Firewall -->
+          <div class="rack-unit" data-unit="firewall">
+            <div class="rack-ear left">
+              <div class="rack-bolt"></div>
+              <div class="rack-bolt"></div>
+            </div>
+            <div class="rack-plate">
+              <span class="device-name">UNIT 02: CISCO ASA FIREWALL</span>
+              <div class="rack-leds">
+                <span class="led led-blink"></span>
+                <span class="led"></span>
+              </div>
+            </div>
+            <div class="rack-ear right">
+              <div class="rack-bolt"></div>
+              <div class="rack-bolt"></div>
+            </div>
+          </div>
+
+          <!-- Switch -->
+          <div class="rack-unit" data-unit="switch">
+            <div class="rack-ear left">
+              <div class="rack-bolt"></div>
+              <div class="rack-bolt"></div>
+            </div>
+            <div class="rack-plate">
+              <span class="device-name">UNIT 03: CATALYST 2960-X SWITCH</span>
+              <div class="rack-ports">
+                <span class="mini-port"></span><span class="mini-port"></span><span class="mini-port"></span><span
+                  class="mini-port"></span>
+                <span class="mini-port"></span><span class="mini-port"></span><span class="mini-port"></span><span
+                  class="mini-port"></span>
+                <span class="mini-port"></span><span class="mini-port"></span><span class="mini-port"></span><span
+                  class="mini-port"></span>
+              </div>
+            </div>
+            <div class="rack-ear right">
+              <div class="rack-bolt"></div>
+              <div class="rack-bolt"></div>
+            </div>
+          </div>
+
+          <!-- Router -->
+          <div class="rack-unit" data-unit="router">
+            <div class="rack-ear left">
+              <div class="rack-bolt"></div>
+              <div class="rack-bolt"></div>
+            </div>
+            <div class="rack-plate">
+              <span class="device-name">UNIT 04: CISCO 2911 ISR ROUTER</span>
+              <div class="rack-leds">
+                <span class="led led-blink"></span>
+                <span class="led led-blink"></span>
+                <span class="led"></span>
+              </div>
+            </div>
+            <div class="rack-ear right">
+              <div class="rack-bolt"></div>
+              <div class="rack-bolt"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details Box -->
+        <div class="rack-detail-card">
+          <div id="rack-details-content">
+            <!-- Loaded dynamically from script -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INTERACTIVE CABLING LAB ─── -->
+  <section id="cabling-lab">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-eyebrow">Hands-On Practice</span>
+        <h2 class="sec-h2">Interactive Cabling Board</h2>
+        <p class="sec-sub">Select a cable type and connect the correct ports between the PC, Switch, and Router to link
+          the network.</p>
+      </div>
+
+      <div class="cabling-wrapper">
+        <!-- Toolbox -->
+        <div class="cable-toolbox">
+          <span class="toolbox-title">1. SELECT CABLE TYPE:</span>
+          <div class="cable-options">
+            <button class="cable-btn" data-cable="console">
+              <span class="cable-color-indicator indicator-console"></span> Console Cable
+            </button>
+            <button class="cable-btn" data-cable="straight">
+              <span class="cable-color-indicator indicator-straight"></span> Straight-Through
+            </button>
+            <button class="cable-btn" data-cable="crossover">
+              <span class="cable-color-indicator indicator-crossover"></span> Crossover
+            </button>
+          </div>
+        </div>
+
+        <!-- Sandbox Workspace -->
+        <div class="cabling-sandbox">
+          <svg class="cable-svg-overlay" id="cable-svg-canvas"></svg>
+
+          <!-- PC -->
+          <div class="cabling-device" id="device-pc">
+            <h4>Workstation PC</h4>
+            <div class="device-ports-row">
+              <div class="port-item">
+                <span>RS-232</span>
+                <div class="port" id="pc-console" data-label="PC RS-232 Port"></div>
+              </div>
+              <div class="port-item">
+                <span>FastEthernet</span>
+                <div class="port" id="pc-ethernet" data-label="PC Ethernet Port"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Switch -->
+          <div class="cabling-device" id="device-switch">
+            <h4>Catalyst Switch</h4>
+            <div class="device-ports-row">
+              <div class="port-item">
+                <span>Fa0/1</span>
+                <div class="port" id="switch-fa1" data-label="Switch Port Fa0/1"></div>
+              </div>
+              <div class="port-item">
+                <span>Fa0/2</span>
+                <div class="port" id="switch-fa2" data-label="Switch Port Fa0/2"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Router -->
+          <div class="cabling-device" id="device-router">
+            <h4>Cisco Router</h4>
+            <div class="device-ports-row">
+              <div class="port-item">
+                <span>Console</span>
+                <div class="port" id="router-console" data-label="Router Console Port"></div>
+              </div>
+              <div class="port-item">
+                <span>Fa0/0</span>
+                <div class="port" id="router-fa0" data-label="Router Port Fa0/0"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cable Status Box -->
+        <div class="cabling-status-box">
+          <div class="status-msg info" id="cabling-status">Select a cable to begin physical wiring.</div>
+          <button class="btn-reset" id="reset-cabling">Reset Cables</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CISCO CLI TERMINAL SIMULATOR ─── -->
+  <section id="cli-sandbox">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-eyebrow">Terminal Sandbox</span>
+        <h2 class="sec-h2">Cisco IOS CLI Simulator</h2>
+        <p class="sec-sub">Configure the live router using Cisco command prompts below. Type commands directly or run
+          the automated script demo.</p>
+      </div>
+
+      <div class="terminal-frame">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="t-btn red"></span>
+            <span class="t-btn yellow"></span>
+            <span class="t-btn green"></span>
+          </div>
+          <div class="terminal-title">sansbound-ios-shell - ssh fa0/1</div>
+          <button class="btn-demo-trigger" id="btn-cli-demo">Run CLI Auto-Demo</button>
+        </div>
+
+        <div class="terminal-content" id="terminal-content">
+          <ul class="cli-output-list" id="cli-output-list">
+            <li class="cli-line output">Sansbound Networking School router bootstrap config active.</li>
+            <li class="cli-line output">Type "help" or "?" to list all available commands.</li>
+            <li class="cli-line output">----------------------------------------------------</li>
+          </ul>
+          <div class="cli-input-line">
+            <span class="cli-prompt" id="cli-prompt">Router&gt;</span>
+            <div class="cli-input-wrapper">
+              <input type="text" id="cli-input" placeholder="type a command... (e.g. enable)" autocomplete="off"
+                spellcheck="false" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LAB EQUIPMENT ─── -->
+  <section id="equipment">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-eyebrow">Inventory</span>
+        <h2 class="sec-h2">Lab Assets &amp; Hardware</h2>
+        <p class="sec-sub">The actual physical inventory that students configure and configure throughout their course
+          modules.</p>
+      </div>
+
+      <div class="equip-grid">
+        <div class="equip-card">
+          <span class="equip-icon">🌐</span>
+          <h3>Cisco ISR Routers</h3>
+          <p>Modular routers equipped with serial WAN links, FastEthernet and Gigabit interfaces.</p>
+          <span class="equip-count">8 Physical Units</span>
+        </div>
+        <div class="equip-card">
+          <span class="equip-icon">🔀</span>
+          <h3>Catalyst Layer 2/3 Switches</h3>
+          <p>Managed Ethernet switches for VLAN trunking, EtherChannel, and port security configurations.</p>
+          <span class="equip-count">12 Units</span>
+        </div>
+        <div class="equip-card">
+          <span class="equip-icon">🛡️</span>
+          <h3>ASA Firewalls</h3>
+          <p>Industrial firewall appliances to teach ACL configuration, NAT rules, and VPN tunnel security.</p>
+          <span class="equip-count">4 Appliances</span>
+        </div>
+        <div class="equip-card">
+          <span class="equip-icon">🔌</span>
+          <h3>Keystone Patch Panels</h3>
+          <p>24-port physical patch panels for patch cabling and structured terminate practices.</p>
+          <span class="equip-count">6 Panels</span>
+        </div>
+        <div class="equip-card">
+          <span class="equip-icon">📡</span>
+          <h3>Wireless Access Points</h3>
+          <p>Enterprise autonomous access points for corporate wireless SSID/VLAN distribution config.</p>
+          <span class="equip-count">4 Enterprise APs</span>
+        </div>
+        <div class="equip-card">
+          <span class="equip-icon">💻</span>
+          <h3>Lab Workstations</h3>
+          <p>High-speed PCs containing direct serial interfaces, terminal emulators, and traffic capture utilities.</p>
+          <span class="equip-count">10 Workstations</span>
+        </div>
+        <div class="equip-card">
+          <span class="equip-icon">🔍</span>
+          <h3>Fluke Cable Testers</h3>
+          <p>Dynamic link testers mapping cable continuity, short circuits, and crosstalk characteristics.</p>
+          <span class="equip-count">6 Units</span>
+        </div>
+        <div class="equip-card">
+          <span class="equip-icon">🗄️</span>
+          <h3>Open Server Racks</h3>
+          <p>Floor-mount rack units for students to practice network mounting, cabling systems, and wire routing.</p>
+          <span class="equip-count">3 Cabinets</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LAB GALLERY ─── -->
+  <div class="gallery-grid">
+
+    <div class="gallery-item tall">
+      <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+        alt="Server Rack">
+      <div class="gallery-overlay">
+        <span>Active Server Racks</span>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+        alt="Cabling Station">
+      <div class="gallery-overlay">
+        <span>Structured Cabling Station</span>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+        alt="Firewall Rack">
+      <div class="gallery-overlay">
+        <span>Firewalls & VPN Racks</span>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1200&q=80"
+        alt="Networking Lab">
+      <div class="gallery-overlay">
+        <span>Core Lab Layout</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── STUDENT REVIEWS ─── -->
+  <section id="reviews">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-eyebrow">Testimonials</span>
+        <h2 class="sec-h2">Student Reviews &amp; Feedback</h2>
+      </div>
+
+      <div class="reviews-top">
+        <div class="rv-score-box">
+          <div class="rv-score-big">4.6</div>
+          <div class="rv-stars-wrapper">
+            <span class="stars">★★★★★</span>
+            <span class="rv-count">960+ Reviews on Google</span>
+          </div>
+        </div>
+        <div class="rv-divider"></div>
+        <div class="rv-hero-quote">
+          "The lab practice is what sets Sansbound apart. You actually configure real gear and physically layout
+          connections rather than clicking through simulated mock programs."
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="avatar navy">B</div>
+            <div class="rv-meta">
+              <h4>Bmani Kandan</h4>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+          <p>Sam sir's teaching is very easy to understand, especially for students from a non-IT background. The
+            physical lab sessions made complex dynamic routing protocols make sense.</p>
+          <span class="rv-date">CCNA Batch · Jan 2023</span>
+        </div>
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="avatar red">S</div>
+            <div class="rv-meta">
+              <h4>Sri Ram Balaji</h4>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+          <p>Completed my CCNA certification program here. The hands-on cabling and CLI practice is where they shine.
+            You hook up physical patch bays instead of running virtual setups.</p>
+          <span class="rv-date">CCNA · 4 months ago</span>
+        </div>
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="avatar navy">R</div>
+            <div class="rv-meta">
+              <h4>Riti Achammal</h4>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+          <p>The routing lab exposure they provide is excellent. Instructors walk through config mistakes on consoles
+            directly, explaining real production solutions instead of exam tricks.</p>
+          <span class="rv-date">CCNA · 3 months ago</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── VISIT US & CONTACT ─── -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info-panel">
+          <span class="sec-eyebrow">Lab Schedule</span>
+          <h3>Visit the Facility</h3>
+          <p class="contact-desc">Come see the physical equipment rack panels. We are open daily and invite walk-ins to
+            tour our stations in Chennai.</p>
+
+          <div class="contact-links">
+            <div class="c-link-item">
+              <span class="c-icon">📍</span>
+              <div class="c-content">
+                <label>Address</label>
+                <p>2, Kirupa Sankari Street, Near Five Lights,<br>Ramakrishnapuram, West Mambalam,<br>Chennai, Tamil
+                  Nadu – 600033</p>
+              </div>
+            </div>
+            <div class="c-link-item">
+              <span class="c-icon">📞</span>
+              <div class="c-content">
+                <label>Phone Contact</label>
+                <a href="tel:+917299055460">072990 55460</a>
+              </div>
+            </div>
+            <div class="c-link-item">
+              <span class="c-icon">🌐</span>
+              <div class="c-content">
+                <label>Official Site</label>
+                <a href="https://sansboundnetworking.com" target="_blank">sansboundnetworking.com</a>
+              </div>
+            </div>
+            <div class="c-link-item">
+              <span class="c-icon">🕐</span>
+              <div class="c-content">
+                <label>Lab Hours</label>
+                <p>Open daily · 9:00 AM - 9:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-form-card">
+          <h3>Request a Lab Tour</h3>
+          <form id="booking-form">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="book-name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="book-phone" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label>Preferred Date</label>
+                <input type="date" id="book-date" required />
+              </div>
+              <div class="form-group">
+                <label>Preferred Time</label>
+                <select id="book-time" required>
+                  <option value="">Select Time...</option>
+                  <option>10:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>02:00 PM</option>
+                  <option>04:00 PM</option>
+                  <option>06:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Course Interest</label>
+              <select id="book-course" required>
+                <option value="">Select a course...</option>
+                <option value="CCNA">CCNA Routing &amp; Switching</option>
+                <option value="Network Fundamentals">Network Fundamentals</option>
+                <option value="Network Security">Network Security &amp; Firewalls</option>
+                <option value="Other">Other / Not sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message (Optional)</label>
+              <textarea id="book-message" placeholder="Ask questions about equipment runs..."></textarea>
+            </div>
+            <button class="btn-submit" type="submit">Submit Request &amp; Get Pass</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TICKET MODAL ─── -->
+  <div class="ticket-modal-overlay" id="ticket-modal">
+    <div class="ticket-card">
+      <div class="ticket-card-header">
+        <h3>Sansbound Lab Tour Pass</h3>
+        <button id="close-modal"
+          style="background:transparent; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-id-row">
+          <span class="t-id-lbl">PASS NUMBER</span>
+          <span id="t-id">SB-9231-CCN</span>
+        </div>
+        <div class="ticket-info-grid">
+          <div class="t-info-item">
+            <label>Name</label>
+            <span id="t-name">Student Name</span>
+          </div>
+          <div class="t-info-item">
+            <label>Course</label>
+            <span id="t-course">CCNA</span>
+          </div>
+          <div class="t-info-item">
+            <label>Schedule Date</label>
+            <span id="t-date">Thursday, October 15</span>
+          </div>
+          <div class="t-info-item">
+            <label>Schedule Time</label>
+            <span id="t-time">02:00 PM</span>
+          </div>
+          <div class="t-info-item">
+            <label>Location</label>
+            <span>West Mambalam, Chennai</span>
+          </div>
+          <div class="t-info-item">
+            <label>Contact Phone</label>
+            <span id="t-phone">+91 98840 98840</span>
+          </div>
+        </div>
+        <div class="barcode-wrapper">
+          <div id="t-barcode"></div>
+          <p
+            style="font-size: 0.65rem; color: var(--text-muted); margin-top: 5px; font-family: 'Fira Code', monospace;">
+            BARCODE CONFIRMED LAB CHECK-IN ONLY</p>
+        </div>
+        <div class="ticket-actions">
+          <button class="btn-reset" id="print-ticket">Print / Save Pass</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <div class="logo-circle">
+            <img src="https://www.sansboundnetworking.com/logo.png" alt="Sansbound Logo" />
+          </div>
+          <span style="font-weight:700; color:var(--text-primary);">SANSBOUND</span>
+        </div>
+        <div>
+          <a href="#lab-overview" style="margin-right:20px;">The Lab</a>
+          <a href="#cabling-lab" style="margin-right:20px;">Cabling</a>
+          <a href="#cli-sandbox" style="margin-right:20px;">CLI Console</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2026 Sansbound – The Networking School. All rights reserved. Developed with hands-on labs in mind.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       APPLICATION LOGIC (INLINE JS)
+       ========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initMobileNav();
+      initRackExplorer();
+      initCiscoCLI();
+      initCablingLab();
+      initBookingForm();
+      initCounters();
+    });
+
+    /* Theme System */
+    function initTheme() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const storedTheme = localStorage.getItem('theme') || 'light-theme';
+
+      document.body.classList.remove('light-theme', 'dark-theme');
+      document.body.classList.add(storedTheme);
+
+      if (storedTheme === 'light-theme') {
+        themeToggle.checked = true;
+      }
+
+      themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
+          document.body.classList.remove('dark-theme');
+          document.body.classList.add('light-theme');
+          localStorage.setItem('theme', 'light-theme');
+        } else {
+          document.body.classList.remove('light-theme');
+          document.body.classList.add('dark-theme');
+          localStorage.setItem('theme', 'dark-theme');
+        }
+      });
+    }
+
+    /* Mobile Drawer */
+    function initMobileNav() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+          });
+        });
+      }
+    }
+
+    /* Rack Explorer State */
+    const rackData = {
+      patch: {
+        title: "Cat6 Structured Patch Panel",
+        model: "24-Port Keystone Patch Panel",
+        role: "Physical Layer Terminations",
+        specs: "24 ports Cat6, T568A/B wiring support, IDC punchdown modules, heavy-duty steel construction with cable support bar.",
+        syllabus: "RJ45 termination technique, cable punch down methods, testing link continuity, wire mapping, and neat cable bundle labeling."
+      },
+      firewall: {
+        title: "Cisco ASA Security Firewall",
+        model: "ASA 5512-X Security Appliance",
+        role: "Network Layer Security & Filtering",
+        specs: "Stateful packet inspection, 4 Gbps firewall throughput, VPN support (IPsec & SSL VPN), physical security zones, network address translation (NAT).",
+        syllabus: "Configuring security zones (Inside, Outside, DMZ), access control lists (ACLs), stateful inspection rules, site-to-site VPN tunnels, IPsec profile creation, and NAT policies."
+      },
+      switch: {
+        title: "Cisco Catalyst Switch",
+        model: "Catalyst 2960-X Series (Managed)",
+        role: "Data Link Layer LAN Switching",
+        specs: "24 Gigabit Ethernet ports, 4 SFP uplink ports, stackable, Layer 2 routing support, PoE (Power over Ethernet), SSH/Console management.",
+        syllabus: "VLAN configuration, trunk port assignment (802.1Q encapsulation), Spanning Tree Protocol (STP) optimization, EtherChannel port bundling, and port security filters."
+      },
+      router: {
+        title: "Cisco Enterprise Router",
+        model: "Cisco 2911 Integrated Services Router (ISR)",
+        role: "Network Layer Dynamic Routing",
+        specs: "3 Gigabit Ethernet ports, 4 EHWIC expansion slots, hardware VPN acceleration, modular IOS configuration, serial WAN interface modules.",
+        syllabus: "Command-Line Interface (CLI) navigation, static routes, configuration of dynamic routing protocols (OSPF, EIGRP, BGP), Access Lists (ACL), sub-interfaces for inter-VLAN routing, and DHCP helper addresses."
+      }
+    };
+
+    function initRackExplorer() {
+      const rackUnits = document.querySelectorAll('.rack-unit');
+      const detailsBox = document.getElementById('rack-details-content');
+
+      rackUnits.forEach(unit => {
+        unit.addEventListener('click', () => {
+          rackUnits.forEach(u => u.classList.remove('active'));
+          unit.classList.add('active');
+
+          const key = unit.dataset.unit;
+          const data = rackData[key];
+
+          if (data) {
+            detailsBox.innerHTML = `
+              <div class="details-header">
+                <h4>${data.title}</h4>
+                <span class="badge badge-primary">${data.model}</span>
+              </div>
+              <p class="details-role"><strong>Role:</strong> ${data.role}</p>
+              <div class="details-section">
+                <h5>Hardware Specifications</h5>
+                <p>${data.specs}</p>
+              </div>
+              <div class="details-section syllabus">
+                <h5>What You Will Learn Hands-On</h5>
+                <ul>
+                  ${data.syllabus.split(', ').map(item => `<li>${item}</li>`).join('')}
+                </ul>
+              </div>
+            `;
+          }
+        });
+      });
+
+      if (rackUnits.length > 0) {
+        rackUnits[0].click();
+      }
+    }
+
+    /* Cisco IOS CLI Engine */
+    function initCiscoCLI() {
+      const cliInput = document.getElementById('cli-input');
+      const cliOutput = document.getElementById('cli-output-list');
+      const terminalContent = document.getElementById('terminal-content');
+      const demoBtn = document.getElementById('btn-cli-demo');
+
+      const state = {
+        hostname: 'Router',
+        mode: 'user',
+        interfaceUp: false,
+        ipAddress: 'unassigned',
+        subnetMask: '',
+        history: [],
+        historyIdx: -1
+      };
+
+      function updatePrompt() {
+        const promptSpan = document.getElementById('cli-prompt');
+        if (!promptSpan) return;
+
+        let suffix = '>';
+        if (state.mode === 'privileged') suffix = '#';
+        else if (state.mode === 'config') suffix = '(config)#';
+        else if (state.mode === 'interface') suffix = '(config-if)#';
+
+        promptSpan.textContent = `${state.hostname}${suffix}`;
+      }
+
+      function appendLine(text, type = 'output') {
+        const li = document.createElement('li');
+        li.className = `cli-line ${type}`;
+        if (type === 'command') {
+          li.textContent = text;
+        } else {
+          li.innerHTML = text.replace(/\n/g, '<br>').replace(/ /g, '&nbsp;');
+        }
+        cliOutput.appendChild(li);
+        terminalContent.scrollTop = terminalContent.scrollHeight;
+      }
+
+      function runCommand(rawCmd) {
+        const cmd = rawCmd.trim();
+        if (!cmd) return;
+
+        state.history.push(rawCmd);
+        state.historyIdx = state.history.length;
+
+        appendLine(`${document.getElementById('cli-prompt').textContent} ${rawCmd}`, 'command');
+
+        const args = cmd.split(/\s+/);
+        const primary = args[0].toLowerCase();
+
+        if (primary === 'help' || primary === '?') {
+          let helpText = "";
+          if (state.mode === 'user') {
+            helpText = `Available commands:\n  enable      - Turn on privileged commands\n  ping        - Send echo messages\n  help / ?    - Description of CLI\n  clear       - Clear screen`;
+          } else if (state.mode === 'privileged') {
+            helpText = `Available commands:\n  configure   - Enter configuration mode\n  disable     - Turn off privileged commands\n  show ip int brief - Brief overview of interfaces\n  show run    - Show running configuration\n  ping        - Test connection\n  exit        - Log out\n  clear       - Clear screen`;
+          } else if (state.mode === 'config') {
+            helpText = `Available commands:\n  hostname    - Set router's host name\n  interface   - Select interface to configure\n  exit        - Exit config mode\n  end         - Exit to privileged mode`;
+          } else if (state.mode === 'interface') {
+            helpText = `Available commands:\n  ip address  - Configure IP on interface\n  no shutdown - Enable FastEthernet0/1\n  shutdown    - Disable interface\n  exit        - Exit interface config\n  end         - Exit to privileged mode`;
+          }
+          appendLine(helpText);
+          return;
+        }
+
+        if (primary === 'clear') {
+          cliOutput.innerHTML = '';
+          return;
+        }
+
+        switch (state.mode) {
+          case 'user':
+            if (primary === 'enable' || primary === 'en') {
+              state.mode = 'privileged';
+            } else if (primary === 'ping') {
+              handlePing(args);
+            } else {
+              appendLine(`% Unrecognized command. Type "?" or "help" for a list of commands.`);
+            }
+            break;
+
+          case 'privileged':
+            if (primary === 'disable') {
+              state.mode = 'user';
+            } else if (primary === 'configure' || primary === 'conf') {
+              if (args[1] && args[1].toLowerCase() === 'terminal' || args[1] === 't') {
+                state.mode = 'config';
+              } else {
+                appendLine(`% Incomplete command: use "configure terminal"`);
+              }
+            } else if (primary === 'show') {
+              handleShow(args);
+            } else if (primary === 'ping') {
+              handlePing(args);
+            } else if (primary === 'exit') {
+              state.mode = 'user';
+            } else {
+              appendLine(`% Unrecognized command. Type "show ?" or "configure terminal"`);
+            }
+            break;
+
+          case 'config':
+            if (primary === 'hostname' || primary === 'host') {
+              if (args[1]) {
+                state.hostname = args[1];
+              } else {
+                appendLine(`% Hostname parameter missing.`);
+              }
+            } else if (primary === 'interface' || primary === 'int') {
+              const target = args[1] ? args[1].toLowerCase() : '';
+              if (target.includes('fastethernet') || target.includes('fa') || target.includes('0/1')) {
+                state.mode = 'interface';
+              } else {
+                appendLine(`% Invalid interface. Try "interface FastEthernet0/1"`);
+              }
+            } else if (primary === 'exit') {
+              state.mode = 'privileged';
+            } else if (primary === 'end') {
+              state.mode = 'privileged';
+            } else {
+              appendLine(`% Invalid configuration command.`);
+            }
+            break;
+
+          case 'interface':
+            if (primary === 'ip') {
+              if (args[1] === 'address' || args[1] === 'add') {
+                const ip = args[2];
+                const mask = args[3];
+                if (validateIP(ip) && validateIP(mask)) {
+                  state.ipAddress = ip;
+                  state.subnetMask = mask;
+                  appendLine(`IP address configured successfully.`);
+                } else {
+                  appendLine(`% Invalid IP address or subnet mask.`);
+                }
+              } else {
+                appendLine(`% Unrecognized command. Use "ip address [ip] [subnet]"`);
+              }
+            } else if (cmd.toLowerCase() === 'no shutdown' || cmd.toLowerCase() === 'no shut') {
+              state.interfaceUp = true;
+              appendLine(`\n*MAR 1 00:01:22.183: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up\n*MAR 1 00:01:23.185: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up`);
+            } else if (primary === 'shutdown' || primary === 'shut') {
+              state.interfaceUp = false;
+              appendLine(`\n*MAR 1 00:01:45.334: %LINK-5-CHANGED: Interface FastEthernet0/1, changed state to administratively down`);
+            } else if (primary === 'exit') {
+              state.mode = 'config';
+            } else if (primary === 'end') {
+              state.mode = 'privileged';
+            } else {
+              appendLine(`% Invalid interface sub-command.`);
+            }
+            break;
+        }
+
+        updatePrompt();
+      }
+
+      function handlePing(args) {
+        if (!args[1]) {
+          appendLine(`% Target IP address is missing.`);
+          return;
+        }
+        const ip = args[1];
+        appendLine(`Sending 5, 100-byte ICMP Echos to ${ip}, timeout is 2 seconds:\nType escape sequence to abort.`);
+
+        if (state.mode === 'privileged' && !state.interfaceUp) {
+          setTimeout(() => {
+            appendLine(`.....\nSuccess rate is 0 percent (0/5)`);
+          }, 500);
+        } else {
+          setTimeout(() => {
+            appendLine(`!!!!!\nSuccess rate is 100 percent (5/5), round-trip min/avg/max = 1/4/12 ms`);
+          }, 500);
+        }
+      }
+
+      function handleShow(args) {
+        if (!args[1]) {
+          appendLine(`% Incomplete command. "show ip int brief" or "show run"`);
+          return;
+        }
+        const sec = args[1].toLowerCase();
+
+        if (sec === 'ip') {
+          const tert = args[2] ? args[2].toLowerCase() : '';
+          const quad = args[3] ? args[3].toLowerCase() : '';
+          if (tert === 'interface' || tert === 'int') {
+            if (quad === 'brief' || quad === 'br') {
+              const status = state.interfaceUp ? 'up' : 'administratively down';
+              const protocol = state.interfaceUp ? 'up' : 'down';
+              appendLine(`Interface              IP-Address      OK? Method Status                Protocol\nFastEthernet0/1        ${padEnd(state.ipAddress, 16)}YES manual ${padEnd(status, 22)}${protocol}\nGigabitEthernet0/0     unassigned      YES unset  administratively down down`);
+            } else {
+              appendLine(`% Incomplete show command. Use "show ip interface brief"`);
+            }
+          } else {
+            appendLine(`% Invalid parameters. Try "show ip interface brief"`);
+          }
+        } else if (sec === 'running-config' || sec === 'run') {
+          const status = state.interfaceUp ? 'no shutdown' : 'shutdown';
+          appendLine(`Building configuration...\n\nCurrent configuration : 1084 bytes\n!\nversion 15.1\nno service timestamps log datetime msec\n!\nhostname ${state.hostname}\n!\ninterface FastEthernet0/1\n ip address ${state.ipAddress} ${state.subnetMask}\n ${status}\n!\ninterface GigabitEthernet0/0\n no ip address\n shutdown\n!\nend`);
+        } else {
+          appendLine(`% Invalid show command.`);
+        }
+      }
+
+      function validateIP(ip) {
+        if (!ip) return false;
+        const parts = ip.split('.');
+        if (parts.length !== 4) return false;
+        return parts.every(part => {
+          const num = parseInt(part, 10);
+          return !isNaN(num) && num >= 0 && num <= 255 && part === num.toString();
+        });
+      }
+
+      function padEnd(str, length) {
+        if (str.length >= length) return str;
+        return str + ' '.repeat(length - str.length);
+      }
+
+      if (cliInput) {
+        cliInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            const val = cliInput.value;
+            cliInput.value = '';
+            runCommand(val);
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (state.historyIdx > 0) {
+              state.historyIdx--;
+              cliInput.value = state.history[state.historyIdx];
+            }
+          } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (state.historyIdx < state.history.length - 1) {
+              state.historyIdx++;
+              cliInput.value = state.history[state.historyIdx];
+            } else {
+              state.historyIdx = state.history.length;
+              cliInput.value = '';
+            }
+          }
+        });
+
+        terminalContent.addEventListener('click', () => {
+          cliInput.focus();
+        });
+      }
+
+      let demoActive = false;
+      if (demoBtn) {
+        demoBtn.addEventListener('click', () => {
+          if (demoActive) return;
+          demoActive = true;
+          demoBtn.disabled = true;
+          demoBtn.textContent = "Running Demo...";
+
+          const script = [
+            "enable",
+            "configure terminal",
+            "hostname Sansbound-Router",
+            "interface FastEthernet0/1",
+            "ip address 192.168.1.1 255.255.255.0",
+            "no shutdown",
+            "end",
+            "show ip interface brief",
+            "ping 192.168.1.10"
+          ];
+
+          let idx = 0;
+          function nextStep() {
+            if (idx < script.length) {
+              const commandText = script[idx];
+              let charIdx = 0;
+              cliInput.value = "";
+
+              const typingTimer = setInterval(() => {
+                if (charIdx < commandText.length) {
+                  cliInput.value += commandText[charIdx];
+                  charIdx++;
+                } else {
+                  clearInterval(typingTimer);
+                  setTimeout(() => {
+                    cliInput.value = "";
+                    runCommand(commandText);
+                    idx++;
+                    setTimeout(nextStep, 1000);
+                  }, 400);
+                }
+              }, 80);
+            } else {
+              demoActive = false;
+              demoBtn.disabled = false;
+              demoBtn.textContent = "Run CLI Auto-Demo";
+            }
+          }
+
+          nextStep();
+        });
+      }
+
+      updatePrompt();
+    }
+
+    /* Cabling Sandbox Simulator */
+    function initCablingLab() {
+      const cableButtons = document.querySelectorAll('.cable-btn');
+      const ports = document.querySelectorAll('.port');
+      const cablingStatus = document.getElementById('cabling-status');
+      const resetBtn = document.getElementById('reset-cabling');
+      const svgCanvas = document.getElementById('cable-svg-canvas');
+
+      let activeCableType = null;
+      let sourcePort = null;
+      let connections = [];
+
+      const validConnections = [
+        { from: "pc-console", to: "router-console", cable: "console" },
+        { from: "router-console", to: "pc-console", cable: "console" },
+        { from: "pc-ethernet", to: "switch-fa1", cable: "straight" },
+        { from: "switch-fa1", to: "pc-ethernet", cable: "straight" },
+        { from: "router-fa0", to: "switch-fa2", cable: "straight" },
+        { from: "switch-fa2", to: "router-fa0", cable: "straight" }
+      ];
+
+      cableButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          cableButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeCableType = btn.dataset.cable;
+        });
+      });
+
+      ports.forEach(port => {
+        port.addEventListener('click', (e) => {
+          e.stopPropagation();
+
+          if (!activeCableType) {
+            cablingStatus.textContent = "Please select a cable type from the panel first!";
+            cablingStatus.className = "status-msg error";
+            return;
+          }
+
+          if (port.classList.contains('connected')) {
+            cablingStatus.textContent = "This port is already connected!";
+            cablingStatus.className = "status-msg error";
+            return;
+          }
+
+          if (!sourcePort) {
+            sourcePort = port;
+            port.classList.add('selected');
+            cablingStatus.textContent = `Connecting from ${port.dataset.label}. Select destination port.`;
+            cablingStatus.className = "status-msg info";
+          } else {
+            const destPort = port;
+
+            if (sourcePort === destPort) {
+              resetPortSelection();
+              return;
+            }
+
+            const srcId = sourcePort.id;
+            const destId = destPort.id;
+
+            const rule = validConnections.find(r => r.from === srcId && r.to === destId && r.cable === activeCableType);
+
+            if (rule) {
+              createConnection(sourcePort, destPort, activeCableType);
+              cablingStatus.textContent = `Success! Link established between ${sourcePort.dataset.label} and ${destPort.dataset.label}.`;
+              cablingStatus.className = "status-msg success";
+            } else {
+              cablingStatus.textContent = "Error: Invalid link! Check if you are using the correct cable type or wiring ports.";
+              cablingStatus.className = "status-msg error";
+            }
+
+            resetPortSelection();
+            checkTotalSuccess();
+          }
+        });
+      });
+
+      function resetPortSelection() {
+        if (sourcePort) {
+          sourcePort.classList.remove('selected');
+        }
+        sourcePort = null;
+      }
+
+      function createConnection(p1, p2, type) {
+        p1.classList.add('connected');
+        p2.classList.add('connected');
+
+        const p1Rect = p1.getBoundingClientRect();
+        const p2Rect = p2.getBoundingClientRect();
+        const canvasRect = svgCanvas.getBoundingClientRect();
+
+        const x1 = p1Rect.left + p1Rect.width / 2 - canvasRect.left;
+        const y1 = p1Rect.top + p1Rect.height / 2 - canvasRect.top;
+        const x2 = p2Rect.left + p2Rect.width / 2 - canvasRect.left;
+        const y2 = p2Rect.top + p2Rect.height / 2 - canvasRect.top;
+
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", x1);
+        line.setAttribute("y1", y1);
+        line.setAttribute("x2", x2);
+        line.setAttribute("y2", y2);
+        line.setAttribute("class", `cable-line ${type}`);
+
+        svgCanvas.appendChild(line);
+
+        connections.push({
+          srcId: p1.id,
+          destId: p2.id,
+          lineEl: line
+        });
+      }
+
+      function checkTotalSuccess() {
+        const requiredConns = 3;
+        const activeConns = connections.length;
+
+        if (activeConns >= requiredConns) {
+          cablingStatus.innerHTML = "✨ <strong>Excellent! The entire lab network topology is cabled correctly.</strong> Physical links are up. Scroll down to configure it on the CLI Console!";
+          cablingStatus.className = "status-msg success highlight";
+        }
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          connections.forEach(conn => {
+            if (conn.lineEl && conn.lineEl.parentNode) {
+              conn.lineEl.parentNode.removeChild(conn.lineEl);
+            }
+          });
+          connections = [];
+          ports.forEach(port => {
+            port.classList.remove('connected', 'selected');
+          });
+          resetPortSelection();
+          cablingStatus.textContent = "Select a cable to begin physical wiring.";
+          cablingStatus.className = "status-msg info";
+        });
+      }
+
+      window.addEventListener('resize', () => {
+        if (connections.length === 0) return;
+
+        const canvasRect = svgCanvas.getBoundingClientRect();
+        connections.forEach(conn => {
+          const p1 = document.getElementById(conn.srcId);
+          const p2 = document.getElementById(conn.destId);
+
+          if (p1 && p2) {
+            const p1Rect = p1.getBoundingClientRect();
+            const p2Rect = p2.getBoundingClientRect();
+
+            const x1 = p1Rect.left + p1Rect.width / 2 - canvasRect.left;
+            const y1 = p1Rect.top + p1Rect.height / 2 - canvasRect.top;
+            const x2 = p2Rect.left + p2Rect.width / 2 - canvasRect.left;
+            const y2 = p2Rect.top + p2Rect.height / 2 - canvasRect.top;
+
+            conn.lineEl.setAttribute("x1", x1);
+            conn.lineEl.setAttribute("y1", y1);
+            conn.lineEl.setAttribute("x2", x2);
+            conn.lineEl.setAttribute("y2", y2);
+          }
+        });
+      });
+    }
+
+    /* Booking Form Generator */
+    function initBookingForm() {
+      const form = document.getElementById('booking-form');
+      const modal = document.getElementById('ticket-modal');
+      const closeBtn = document.getElementById('close-modal');
+      const printBtn = document.getElementById('print-ticket');
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById('book-name').value;
+          const phone = document.getElementById('book-phone').value;
+          const course = document.getElementById('book-course').value;
+          const date = document.getElementById('book-date').value;
+          const time = document.getElementById('book-time').value;
+
+          if (!name || !phone || !course || !date || !time) {
+            alert("Please fill in all booking fields.");
+            return;
+          }
+
+          const ticketId = `SB-${Math.floor(1000 + Math.random() * 9000)}-${course.substring(0, 3).toUpperCase()}`;
+          const barcodeLines = Array.from({ length: 42 }, () => Math.random() > 0.45 ? '3px' : '1px');
+
+          document.getElementById('t-id').textContent = ticketId;
+          document.getElementById('t-name').textContent = name;
+          document.getElementById('t-course').textContent = course;
+          document.getElementById('t-phone').textContent = phone;
+
+          const formattedDate = new Date(date).toLocaleDateString('en-US', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+          });
+          document.getElementById('t-date').textContent = formattedDate;
+          document.getElementById('t-time').textContent = time;
+
+          const barcodeContainer = document.getElementById('t-barcode');
+          barcodeContainer.innerHTML = barcodeLines.map(w => `<div style="width: ${w}; height: 40px; background-color: var(--text-primary); display: inline-block; margin-right: 2px;"></div>`).join('');
+
+          modal.classList.add('active');
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          modal.classList.remove('active');
+          form.reset();
+        });
+      }
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('active');
+            form.reset();
+          }
+        });
+      }
+
+      if (printBtn) {
+        printBtn.addEventListener('click', () => {
+          const printContent = document.querySelector('.ticket-card').innerHTML;
+
+          const printWindow = window.open('', '_blank');
+          printWindow.document.write(`
+            <html>
+              <head>
+                <title>Sansbound Lab Tour Pass</title>
+                <style>
+                  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #fff; color: #000; padding: 40px; text-align: center; }
+                  .ticket-card { border: 2px dashed #000; padding: 30px; border-radius: 12px; max-width: 500px; margin: 0 auto; background: #fff; }
+                  h3 { font-size: 24px; color: #1B3A6B; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+                  p { margin: 8px 0; }
+                  .ticket-id { font-weight: bold; font-size: 18px; color: #C0392B; margin-bottom: 20px; }
+                  .ticket-details { border-top: 1px solid #ddd; padding-top: 15px; text-align: left; }
+                  .ticket-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
+                  .label { font-weight: bold; color: #555; }
+                  .barcode { margin-top: 30px; }
+                </style>
+              </head>
+              <body>
+                <div class="ticket-card">
+                  ${printContent}
+                </div>
+                <script>
+                  window.onload = function() { window.print(); window.close(); }
+  <\/script>
+</body>
+
+</html>
+`);
+          printWindow.document.close();
+        });
+      }
+    }
+
+    /* Counters Animation */
+    function initCounters() {
+      const stats = document.querySelectorAll('.stat-num');
+
+      const options = {
+        threshold: 0.5
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseFloat(el.getAttribute('data-target'));
+            const isDecimal = el.getAttribute('data-decimal') === 'true';
+            let current = 0;
+            const speed = target / 50;
+
+            const updateCounter = () => {
+              current += speed;
+              if (current < target) {
+                el.innerHTML = isDecimal ? current.toFixed(1) : Math.floor(current); setTimeout(updateCounter,
+                  20);
+              } else { el.innerHTML = target; }
+            }; updateCounter(); observer.unobserve(el);
+          }
+        });
+      }, options);
+      stats.forEach(stat => {
+        observer.observe(stat);
+      });
+    }
+  </script>
+</body>
+
+</html>
